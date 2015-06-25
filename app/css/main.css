@@ -2,6 +2,9 @@
   width: 75%;
   margin: 50px auto; }
 
+li {
+  list-style-type: none; }
+
 nav {
   background-color: #1A88B4;
   height: 45px;

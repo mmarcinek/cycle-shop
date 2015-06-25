@@ -11,8 +11,11 @@
     $scope.title = 'Tell us about a cool shop';
 
     var Shops = function (options) {
-      this.name = options.name;
-      this.address = options.address;
+      this.shopName = options.shopName;
+      this.address = options.street;
+      this.address = options.city;
+      this.address = options.state;
+      this.address = options.zip;
       this.phone = options.phone;
       this.desc = options.desc;
     };
@@ -24,7 +27,7 @@
 
       $http.post(PARSE.URL + 'classes/shops', shop, PARSE.CONFIG)
 
-      success( function (){
+      .success( function (){
         $location.path('/');
         $scope.shop = {};
 
