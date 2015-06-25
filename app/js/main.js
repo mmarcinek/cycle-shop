@@ -14,20 +14,23 @@
     }
   })
 
-  .config(['$routeProvider',
+  .config( [ '$routeProvider',
     function( $routeProvider){
 
       $routeProvider.when('/', {
-        controller: 'Cycles',
+
+        controller: 'CycleList',
         templateUrl: 'js/cycle/home.tpl.html'
+
       })
 
       .when('/add', {
         controller: 'Cycles',
         templateUrl: 'js/cycle/addshop.tpl.html'
-      });
-    }
 
+      });
+
+    }
 
     ]);
 

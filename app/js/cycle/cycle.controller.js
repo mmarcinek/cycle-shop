@@ -6,23 +6,27 @@
 
   .controller('Cycles', ['$scope', '$http', 'PARSE', '$location',
 
-  function ($scope, $scope, $http, PARSE, $location) {
+  function ($scope, $http, PARSE, $location) {
 
-    var Shop = function (options) {
+    $scope.title = 'Tell us about a cool shop';
+
+    var Shops = function (options) {
       this.name = options.name;
       this.address = options.address;
       this.phone = options.phone;
-      this.description = options.description;
+      this.desc = options.desc;
     };
 
-    var addShop = function (x){
-      var store = new Shop(x);
+    $scope.addShop = function (x){
+      // console.log('click')
+      var shop = new Shops(x);
+      console.log(x);
 
-      $http.post('PARSE', 'classes/shops', store, PARSE.CONFIG)
+      $http.post(PARSE.URL + 'classes/shops', shop, PARSE.CONFIG)
 
       success( function (){
         $location.path('/');
-        $scope.store = {};
+        $scope.shop = {};
 
       });
 
