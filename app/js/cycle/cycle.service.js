@@ -32,7 +32,7 @@
 
     this.getShops = function () {
       $http.get(endpoint, PARSE.CONFIG).success( function (data){
-        return data;
+        return CycleList;
       });
 
     };
