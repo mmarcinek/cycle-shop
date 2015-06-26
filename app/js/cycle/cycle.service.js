@@ -19,7 +19,7 @@
       this.zip = options.zip;
       this.phone = options.phone;
       this.desc = options.desc;
-      // Look to see if Lat and Long can be created on the constructor
+      // Look to see if 'Lat' and 'Long' can be created on the constructor
       // this.lat = options.lat;
       // this.long = options.long;
     };
@@ -39,6 +39,11 @@
     this.getSingleShop = function (id) {
       return $http.get(endpoint + id, PARSE.CONFIG);
       console.log(id);
+    };
+
+    this.deleteShop = function (d){
+      var deleteURL = endpoint + d.objectId;
+      return $http.delete(deleteURL, PARSE.CONFIG);
     };
 
     // this.getLocationMarker = function(){
