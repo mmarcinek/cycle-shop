@@ -1,6 +1,8 @@
 .container {
   width: 75%;
   margin: 50px auto; }
+  .container h1 {
+    text-align: center; }
 
 li {
   list-style-type: none; }
@@ -12,3 +14,11 @@ nav {
   nav a {
     margin-left: 50px;
     color: white; }
+
+.stores {
+  float: left;
+  margin: 0 30px 10px 10px; }
+
+.angular-google-map-container {
+  height: 600px;
+  width: 750px; }

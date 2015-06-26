@@ -4,20 +4,15 @@
 
   angular.module('CycleShop')
 
-  .controller('CycleList', ['$scope', '$http', 'PARSE',
+  .controller('CycleList', ['$scope', 'CycleService',
 
-    function ($scope, $http, PARSE) {
+    function ($scope, CycleService) {
 
-      $scope.title = "Cool Shops";
+      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
-      $scope.cycleList = [];
+      CycleService.getShops();
 
-      $http.get(PARSE.URL + 'classes/shops', PARSE.CONFIG)
 
-      .success( function (data){
-        $scope.cycleList = data.results;
-
-      });
     }
 
     ]);

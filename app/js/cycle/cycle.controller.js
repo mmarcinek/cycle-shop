@@ -4,37 +4,25 @@
 
   angular.module('CycleShop')
 
-  .controller('Cycles', ['$scope', '$http', 'PARSE', '$location',
+  .controller('Cycles', ['$scope', '$http', 'PARSE', '$location', 'CycleService',
 
-  function ($scope, $http, PARSE, $location) {
+  function ($scope, $http, PARSE, $location, CycleService) {
 
     $scope.title = 'Tell us about a cool shop';
 
-    var Shops = function (options) {
-      this.shopName = options.shopName;
-      this.address = options.street;
-      this.address = options.city;
-      this.address = options.state;
-      this.address = options.zip;
-      this.phone = options.phone;
-      this.desc = options.desc;
-    };
-
-    $scope.addShop = function (x){
-      // console.log('click')
-      var shop = new Shops(x);
-      console.log(x);
-
-      $http.post(PARSE.URL + 'classes/shops', shop, PARSE.CONFIG)
-
-      .success( function (){
+    //Add Shop -- needed to invoke $scope event
+    $scope.addShop = function (x) {
+      // Calls to service for function:
+      CycleService.addShop(x).success( function(){
+        // navigate home
         $location.path('/');
+        // clears form
         $scope.shop = {};
-
       });
 
     };
-  }
+
+    }
 
   ])
 

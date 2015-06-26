@@ -1,11 +1,14 @@
-<h1>This is the Cycle Shop</h1>
-<h2>and this is only a placeholder</h2>
+<h1>Welcome to the Cycle Shop</h1>
 
 <div class="stores">
-  <ul ng-repeat="c in cycleList">
+  <ul ng-repeat="c in cycleList"><a href="#/shop/{{ c.objectId }}">
     <li>{{ c.shopName }}</li>
     <li>{{ c.street }}</li>
     <li>{{ c.city }}, {{ c.state }} {{ c.zip }}</li>
     <li>{{ c.phone }}</li>
-  </ul>
+  </ul></a>
+</div>
+
+<div>
+  <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
 </div>

@@ -1,6 +1,6 @@
 ## Welcome to My Angular Project
 
-> I am your Readme.md file, you should probably update me.
+-This project relies on the Angular-Google-Maps directive and will be compiled as a depency with `bower install`.
 
 
 ## Usage

@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module('CycleShop', ['ngRoute'])
+  angular.module('CycleShop', ['ngRoute', 'uiGmapgoogle-maps'])
 
   .constant('PARSE', {
     URL: 'https://api.parse.com/1/',
@@ -27,6 +27,12 @@
       .when('/add', {
         controller: 'Cycles',
         templateUrl: 'js/cycle/addshop.tpl.html'
+
+      })
+
+      .when('/store/:id', {
+        controller: 'CycleList',
+        templateUrl: 'js/cycle/singleshop.tpl.html'
 
       });
 
