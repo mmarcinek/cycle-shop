@@ -23,7 +23,6 @@
 
     // Add a new Shop
     this.addShop = function (x){
-      console.log('click');
       var shop = new Shops(x);
       return $http.post(endpoint, shop, PARSE.CONFIG);
     };
@@ -31,12 +30,13 @@
     // Get the Bike Shop Array
 
     this.getShops = function () {
-      $http.get(endpoint, PARSE.CONFIG).success( function (data){
-        return CycleList;
-      });
-
+      return $http.get(endpoint, PARSE.CONFIG);
     };
 
+    this.getSingleShop = function (id) {
+      return $http.get(endpoint+id, PARSE.CONFIG);
+
+    }
 
 
 
