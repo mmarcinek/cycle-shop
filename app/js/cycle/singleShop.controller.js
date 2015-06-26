@@ -4,7 +4,7 @@
 
   angular.module('CycleShop')
 
-  .controller('CycleSingle', ['$scope', 'CycleService', '$routeParams',
+  .controller('SingleShop', ['$scope', 'CycleService', '$routeParams',
 
     function($scope, CycleService, $routeParams) {
 
@@ -12,9 +12,8 @@
 
     CycleService
       .getSingleShop(id)
-      .success (function (){
-        $scope.CycleSingle = data;
-        console.log(data);
+      .success (function (data){
+        $scope.shop = data;
       });
 
     }

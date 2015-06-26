@@ -19,6 +19,9 @@
       this.zip = options.zip;
       this.phone = options.phone;
       this.desc = options.desc;
+      // Look to see if Lat and Long can be created on the constructor
+      // this.lat = options.lat;
+      // this.long = options.long;
     };
 
     // Add a new Shop
@@ -34,9 +37,15 @@
     };
 
     this.getSingleShop = function (id) {
-      return $http.get(endpoint+id, PARSE.CONFIG);
+      return $http.get(endpoint + id, PARSE.CONFIG);
+      console.log(id);
+    };
 
-    }
+    // this.getLocationMarker = function(){
+    //   return $http.get('https://maps.googleapis.com/maps/api/geocode/json?address='
+    //       + data.street + ',' + data.city +',+' + data.state+ '&key=' + gMapsAPI);
+
+    // };
 
 
 

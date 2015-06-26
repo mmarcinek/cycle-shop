@@ -19,7 +19,7 @@
 
       $routeProvider.when('/', {
 
-        controller: 'CycleList',
+        controller: 'Home',
         templateUrl: 'js/cycle/home.tpl.html'
 
       })
@@ -30,8 +30,8 @@
 
       })
 
-      .when('/store/:id', {
-        controller: 'CycleList',
+      .when('/shop/:id', {
+        controller: 'SingleShop',
         templateUrl: 'js/cycle/singleshop.tpl.html'
 
       });
